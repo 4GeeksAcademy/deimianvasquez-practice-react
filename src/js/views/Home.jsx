@@ -1,9 +1,11 @@
 import React from 'react'
 import Navbar from '../component/Navbar.jsx';
 import Greeting from '../component/Greeting.jsx';
+import Card from '../component/Card.jsx';
 
 
 const Home = () => {
+    const arr = ["Deimian", "Juana", "Carlos", "Feliz", "José"]
     return (
         <>
             <Navbar />
@@ -18,6 +20,18 @@ const Home = () => {
             <h1>Bien y tu</h1>
 
             <Greeting deimian="Hola estoy al final de la web" myClass={"text-success"} />
+            <div className='container'>
+                <div className="row">
+                    {
+                        arr.map((item, index) => {
+                            return (
+                                <Card key={index} item={item} />
+                            )
+                        })
+                    }
+                </div>
+            </div>
+
         </>
     )
 }
