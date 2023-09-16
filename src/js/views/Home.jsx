@@ -9,17 +9,22 @@ const Home = () => {
     return (
         <>
             <Navbar />
+            <div className="container">
+                <Greeting deimian="Hola estoy al inicio de la web" myClass={"my-h1"} />
 
-            <Greeting deimian="Hola estoy al inicio de la web" myClass={"my-h1"} />
+                <h1>Hola desde el home componente de vista</h1>
 
-            <h1>Hola desde el home componente de vista</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae, magnam facilis dolorum atque ratione,
+                    quaerat id et quod eveniet voluptatum aliquid cupiditate accusamus ex veritatis in. Dolor dolorum iusto rem.</p>
 
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae, magnam facilis dolorum atque ratione,
-                quaerat id et quod eveniet voluptatum aliquid cupiditate accusamus ex veritatis in. Dolor dolorum iusto rem.</p>
+                <h1>Bien y tu</h1>
 
-            <h1>Bien y tu</h1>
+                <Greeting deimian="Hola estoy al final de la web" myClass={"text-success"} />
+                <Greeting deimian='Probando el despliegue en vercel' myClass={"text-primary"} />
+            </div>
 
-            <Greeting deimian="Hola estoy al final de la web" myClass={"text-success"} />
+
+
             <div className='container'>
                 <div className="row">
                     {
