@@ -10,3 +10,8 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+
+.my-h1{
+    color: red;
+    background-color: green;
+}
