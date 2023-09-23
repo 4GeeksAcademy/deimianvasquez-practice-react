@@ -1,11 +1,40 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../component/Navbar.jsx';
 import Greeting from '../component/Greeting.jsx';
 import Card from '../component/Card.jsx';
 
 
 const Home = () => {
-    const arr = ["Deimian", "Juana", "Carlos", "Feliz", "José"]
+    const [character, setCharacter] = useState([])
+
+
+    // //then
+    // const getCharacter = () => {
+    //     fetch("https://rickandmortyapi.com/api/character")
+    //         .then((response) => response.json())
+    //         .then((data) => setCharacter(data.results))
+    //         .catch((error) => console.log(error))
+    // }
+
+
+    //async await
+    const getCharacter = async () => {
+        try {
+            let response = await fetch("https://rickandmortyapi.com/api/character")
+            let data = await response.json()
+
+            setCharacter(data.results)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
+
+    useEffect(() => {
+        getCharacter()
+    }, [])
+
     return (
         <>
             <Navbar />
@@ -23,9 +52,17 @@ const Home = () => {
                 <Greeting deimian='Probando el despliegue en vercel' myClass={"text-primary"} />
             </div>
 
+            <div className="container">
+                <div className="row">
+                    {character.map((item) => {
+                        return (
+                            <Card key={item.id} character={item} />
+                        )
+                    })}
+                </div>
+            </div>
 
-
-            <div className='container'>
+            {/* <div className='container'>
                 <div className="row">
                     {
                         arr.map((item, index) => {
@@ -35,7 +72,7 @@ const Home = () => {
                         })
                     }
                 </div>
-            </div>
+            </div> */}
 
         </>
     )
