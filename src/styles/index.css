@@ -15,3 +15,7 @@
     color: red;
     background-color: green;
 }
+.incorrecto {
+    text-decoration:line-through;
+    color: red;
+}
