@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from '../component/Navbar.jsx';
 import Greeting from '../component/Greeting.jsx';
 import Card from '../component/Card.jsx';
 
@@ -37,7 +36,6 @@ const Home = () => {
 
     return (
         <>
-            <Navbar />
             <div className="container">
                 <Greeting deimian="Hola estoy al inicio de la web" myClass={"my-h1"} />
 
